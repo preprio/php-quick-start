@@ -1,0 +1,5 @@
+{
+    "require": {
+        "preprio/php-graphql-sdk": "^1.0"
+    }
+}
