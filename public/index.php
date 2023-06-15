@@ -35,7 +35,7 @@ echo '<div>';
     } else {
 
         $apiRequest
-            ->query('../queries/get-article-detail.graphql')
+            ->query('../queries/get-article-by-slug.graphql')
             ->variables([
                 'slug' => $_GET['slug']
             ])
@@ -70,5 +70,3 @@ echo '<div>';
     }
 
 echo '</div>';
-
-?>
