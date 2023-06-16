@@ -7,7 +7,7 @@ $apiRequest = new Prepr('https://graphql.prepr.io/7f05e9e2f17f1b3d5e08dab3a565ac
 
 echo '<div>';
 
-    if(!$_GET['slug']) {
+    if(!isset($_GET['slug'])) {
 
         echo '<h1>My blog site</h1>
     
