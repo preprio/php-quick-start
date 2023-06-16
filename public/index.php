@@ -25,7 +25,7 @@ echo '<div>';
                 foreach ($articles as $article) {
 
                     echo '<li>
-                        <a href="/?slug='.$article['_slug'].'">'.$article['title'].'</a>
+                        <a href="' . $_SERVER['REQUEST_URI'] . '?slug='.$article['_slug'].'">'.$article['title'].'</a>
                     </li>';
                 }
             }
