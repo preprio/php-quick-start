@@ -1,5 +1,7 @@
-# php-quick-start
+# PHP Quick Start
 The PHP quick start project launches a blog app with content from Prepr.
+
+Look at the [PHP Quick start guide](https://docs.prepr.io/connecting-front-end-apps/php-quick-start-guide) to learn more.
 
 ## Setup
 
