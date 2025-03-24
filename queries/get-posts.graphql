@@ -1,5 +1,5 @@
 query {
-    Articles {
+    Posts {
         items {
             _id
             _slug

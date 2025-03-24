@@ -3,7 +3,7 @@ require '../vendor/autoload.php';
 
 use Preprio\Prepr;
 
-$apiRequest = new Prepr('https://graphql.prepr.io/7f05e9e2f17f1b3d5e08dab3a565acbea8b87745473917e159f70ae1cf0334b9');
+$apiRequest = new Prepr('https://graphql.prepr.io/ac_8a73ce93e85c18ccec497b81cf8a6458a8cee50c50fbbda897bb9cee07e1eba0');
 
 echo '<div>';
 
@@ -14,18 +14,18 @@ echo '<div>';
         <ul>';
 
             $apiRequest
-                ->query('../queries/get-articles.graphql')
+                ->query('../queries/get-posts.graphql')
                 ->request();
 
             $apiResponse = $apiRequest->getResponse();
 
-            $articles = $apiResponse['data']['Articles']['items'];
-            if ($articles) {
+            $posts = $apiResponse['data']['Posts']['items'];
+            if ($posts) {
 
-                foreach ($articles as $article) {
+                foreach ($posts as $post) {
 
                     echo '<li>
-                        <a href="' . $_SERVER['REQUEST_URI'] . '?slug='.$article['_slug'].'">'.$article['title'].'</a>
+                        <a href="' . $_SERVER['REQUEST_URI'] . '?slug='.$post['_slug'].'">'.$post['title'].'</a>
                     </li>';
                 }
             }
@@ -35,7 +35,7 @@ echo '<div>';
     } else {
 
         $apiRequest
-            ->query('../queries/get-article-by-slug.graphql')
+            ->query('../queries/get-post-by-slug.graphql')
             ->variables([
                 'slug' => $_GET['slug']
             ])
@@ -43,13 +43,13 @@ echo '<div>';
 
         $apiResponse = $apiRequest->getResponse();
 
-        $article = $apiResponse['data']['Article'];
-        if($article) {
+        $post = $apiResponse['data']['Post'];
+        if($post) {
 
-            echo '<h1>' . $article['title'] . '</h1>';
+            echo '<h1>' . $post['title'] . '</h1>';
 
-            if($article['content']) {
-                foreach($article['content'] as $content) {
+            if($post['content']) {
+                foreach($post['content'] as $content) {
 
                     if($content['__typename'] === 'Assets') {
 
