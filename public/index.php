@@ -48,13 +48,17 @@ echo '<div>';
 
             echo '<h1>' . $post['title'] . '</h1>';
 
+            echo '<div class="my-10">
+                <img src="' . $post['cover']['url'] . '"/>
+            </div>';
+
             if($post['content']) {
                 foreach($post['content'] as $content) {
 
                     if($content['__typename'] === 'Assets') {
 
                         echo '<div class="my-10">
-                            <img src="' . $content['items'][0]['url'] . '" width="300" height="250"/>
+                            <img src="' . $content['items'][0]['url'] . '"/>
                         </div>';
 
                     } elseif($content['__typename'] === 'Text') {
