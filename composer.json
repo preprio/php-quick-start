@@ -1,7 +1,7 @@
 {
     "require": {
         "preprio/php-graphql-sdk": "^1.0",
-        "guzzlehttp/guzzle": "^7.12.1",
-        "guzzlehttp/psr7": "^2.12.1"
+        "guzzlehttp/guzzle": "^7.15.1",
+        "guzzlehttp/psr7": "^2.13.0"
     }
 }
